@@ -53,6 +53,7 @@ function endGame() {
   var allRocks = document.getElementsByClassName('rock')
   while (allRocks.length > 0) {
     GAME.removeChild(allRocks[0])
+    allRocks = document.getElementsByClassName('rock')
   }​
   alert("YOU LOSE!")
 }
