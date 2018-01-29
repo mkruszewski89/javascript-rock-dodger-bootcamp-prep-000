@@ -33,12 +33,10 @@ function createRock(x) {
 
   function moveRock() {
     if (checkCollision === true) {
-      clearInterval(rockDropInterval)
       endgame()
       return
     }
     if (top >= 360) {
-      clearInterval(rockDropInterval)
       GAME.removeChild(rock)
       return
     }
@@ -50,40 +48,41 @@ function createRock(x) {
   return rock
 }
 
-/**
- * End the game by clearing `gameInterval`,
- * removing all ROCKS from the DOM,
- * and removing the `moveDodger` event listener.
- * Finally, alert "YOU LOSE!" to the player.
- */
 function endGame() {
+  clearInterval(gameInterval)
+  ROCKS = []
+  window.removeEventListener('keydown', moveDodger)
+  alert("YOU LOSE!")
 }
 
 function moveDodger(e) {
-  // implement me!
-  /**
-   * This function should call `moveDodgerLeft()`
-   * if the left arrow is pressed and `moveDodgerRight()`
-   * if the right arrow is pressed. (Check the constants
-   * we've declared for you above.)
-   * And be sure to use the functions declared below!
-   */
+  if (e.which === LEFT_ARROW) {
+    moveDodgerLeft()
+  }
+  if (e.which === RIGHT_ARROW) {
+    moveDodgerRight()
+  }
+  return
 }
 
 function moveDodgerLeft() {
-  // implement me!
-  /**
-   * This function should move DODGER to the left
-   * (mabye 4 pixels?). Use window.requestAnimationFrame()!
-   */
+  function shiftLeft() {
+    const dodgerLeftEdge = positionToInteger(DODGER.style.left)
+    const dodgerRightEdge = dodgerLeftEdge + 40
+    dodgerLeftEdge += 4
+    dodgerRightEdge += 4
+  }
+  window.requestAnimationFrame(shiftLeft)
 }
 
 function moveDodgerRight() {
-  // implement me!
-  /**
-   * This function should move DODGER to the right
-   * (mabye 4 pixels?). Use window.requestAnimationFrame()!
-   */
+  function shiftRight() {
+    const dodgerLeftEdge = positionToInteger(DODGER.style.left)
+    const dodgerRightEdge = dodgerLeftEdge + 40
+    dodgerLeftEdge -= 4
+    dodgerRightEdge -= 4
+  }
+  window.requestAnimationFrame(shiftRight)
 }
 
 /**
