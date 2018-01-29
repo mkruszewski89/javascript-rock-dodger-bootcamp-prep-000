@@ -32,7 +32,7 @@ function createRock(x) {
   GAME.appendChild(rock)
 
   function moveRock() {
-    if (checkCollision == true) {
+    if (checkCollision() === true) {
       endgame()
       return
     }
