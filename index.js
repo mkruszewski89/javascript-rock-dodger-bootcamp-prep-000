@@ -50,10 +50,7 @@ function createRock(x) {
 function endGame() {
   clearInterval(gameInterval)
   window.removeEventListener('keydown', moveDodger)
-  var allRocks = document.getElementsByClassName('rock')
-  while (allRocks.length > 0) {
-    GAME.removeChild(allRocks[0])
-    allRocks = document.getElementsByClassName('rock')
+  ROCKS.length = 0
   }​
   alert("YOU LOSE!")
 }
