@@ -33,7 +33,7 @@ function createRock(x) {
 
   function moveRock() {
     if (checkCollision() === true) {
-      endgame()
+      endGame()
       return
     }
     if (top >= 360) {
