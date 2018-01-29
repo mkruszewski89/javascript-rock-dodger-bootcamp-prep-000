@@ -44,6 +44,7 @@ function createRock(x) {
   }
 
   rockDropInterval = setInterval(window.requestAnimationFrame(moveRock), 500)
+  return rock
 }
 
 function endGame() {
