@@ -40,7 +40,7 @@ function createRock(x) {
       GAME.removeChild(rock)
       return
     }
-    top += 2
+    rock.style.top = top + 2
   }
   ROCKS.push(rock)
   return rock
