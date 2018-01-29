@@ -66,8 +66,11 @@ function moveDodger(e) {
 }
 
 function moveDodgerLeft() {
+  const dodgerLeftEdge = positionToInteger(DODGER.style.left)
+  if (dodgerLeftEdge === 0) {
+    return
+  }
   function shiftLeft() {
-    const dodgerLeftEdge = positionToInteger(DODGER.style.left)
     DODGER.style.left = `${dodgerLeftEdge - 4}px`
   }
   window.requestAnimationFrame(shiftLeft)
