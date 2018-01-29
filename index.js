@@ -31,7 +31,7 @@ function createRock(x) {
   rock.style.top = top
   GAME.appendChild(rock)
   ROCKS.push(rock)
-  rockDropInterval = setInterval(window.requestAnimationFrame(moveRock), 500)
+  rockDropInterval = setInterval(moveRock, 500)
 
   function moveRock() {
     if (checkCollision() === true) {
@@ -41,7 +41,7 @@ function createRock(x) {
       GAME.removeChild(rock)
       return
     }
-    rock.style.top += 2
+    window.requestAnimationFrame(rock.style.top += 2)
   }
 
   return rock
