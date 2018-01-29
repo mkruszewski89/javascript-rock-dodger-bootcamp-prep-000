@@ -51,7 +51,7 @@ function endGame() {
   clearInterval(gameInterval)
   window.removeEventListener('keydown', moveDodger)
   var allRocks = document.getElementsByClassName('rock')
-  while (allRocks[0]) {
+  while (allRocks.length > 0) {
     GAME.removeChild(allRocks[0])
   }​
   alert("YOU LOSE!")
