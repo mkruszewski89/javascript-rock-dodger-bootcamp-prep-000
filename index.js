@@ -37,9 +37,11 @@ function createRock(x) {
     if (checkCollision(rock) === true) {
       endGame()
     }
-    if (top < GAME_HEIGHT - 40) {
+    if (top < GAME_HEIGHT) {
       window.requestAnimationFrame(moveRock)
-    } 
+    } else {
+      rock.remove()
+    }
   }
 
   window.requestAnimationFrame(moveRock)
