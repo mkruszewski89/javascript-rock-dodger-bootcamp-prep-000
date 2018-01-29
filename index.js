@@ -67,20 +67,16 @@ function moveDodger(e) {
 
 function moveDodgerLeft() {
   function shiftLeft() {
-    var dodgerLeftEdge = positionToInteger(DODGER.style.left)
-    var dodgerRightEdge = dodgerLeftEdge + 40
-    dodgerLeftEdge += 4
-    dodgerRightEdge += 4
+    const dodgerLeftEdge = positionToInteger(DODGER.style.left)
+    DODGER.style.left = `${dodgerLeftEdge + 4}px`
   }
   window.requestAnimationFrame(shiftLeft)
 }
 
 function moveDodgerRight() {
   function shiftRight() {
-    var dodgerLeftEdge = positionToInteger(DODGER.style.left)
-    var dodgerRightEdge = dodgerLeftEdge + 40
-    dodgerLeftEdge -= 4
-    dodgerRightEdge -= 4
+    const dodgerLeftEdge = positionToInteger(DODGER.style.left)
+    DODGER.style.left = `${dodgerLeftEdge - 4}px`
   }
   window.requestAnimationFrame(shiftRight)
 }
