@@ -41,6 +41,7 @@ function createRock(x) {
     }
     rock.style.top += 2
   }
+
   ROCKS.push(rock)
   rockDropInterval = setInterval(window.requestAnimationFrame(moveRock), 500)
   return rock
@@ -49,9 +50,7 @@ function createRock(x) {
 function endGame() {
   clearInterval(gameInterval)
   window.removeEventListener('keydown', moveDodger)
-  while (ROCKS.length > 0) {
-      ROCKS.pop()
-  }
+  ROCKS.length = 0
   alert("YOU LOSE!")
 }
 
