@@ -52,8 +52,7 @@ function endGame() {
   window.removeEventListener('keydown', moveDodger)
   var rocks = document.getElementsByClassName('rock')
   while(rocks[0]) {
-    rocks[0].GAME.removeChild(rocks[0])
-    ROCKS.pop()
+    GAME.removeChild(rocks[0])
   }​
   alert("YOU LOSE!")
 }
