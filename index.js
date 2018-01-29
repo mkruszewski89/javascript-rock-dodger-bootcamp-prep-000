@@ -48,8 +48,10 @@ function createRock(x) {
 
 function endGame() {
   clearInterval(gameInterval)
-  ROCKS.length = 0
   window.removeEventListener('keydown', moveDodger)
+  for (var i = 0; i < rocks.length; i += 1) {
+      ROCKS.pop()
+  }
   alert("YOU LOSE!")
 }
 
@@ -65,8 +67,8 @@ function moveDodger(e) {
 
 function moveDodgerLeft() {
   function shiftLeft() {
-    const dodgerLeftEdge = positionToInteger(DODGER.style.left)
-    const dodgerRightEdge = dodgerLeftEdge + 40
+    var dodgerLeftEdge = positionToInteger(DODGER.style.left)
+    var dodgerRightEdge = dodgerLeftEdge + 40
     dodgerLeftEdge += 4
     dodgerRightEdge += 4
   }
@@ -75,8 +77,8 @@ function moveDodgerLeft() {
 
 function moveDodgerRight() {
   function shiftRight() {
-    const dodgerLeftEdge = positionToInteger(DODGER.style.left)
-    const dodgerRightEdge = dodgerLeftEdge + 40
+    var dodgerLeftEdge = positionToInteger(DODGER.style.left)
+    var dodgerRightEdge = dodgerLeftEdge + 40
     dodgerLeftEdge -= 4
     dodgerRightEdge -= 4
   }
