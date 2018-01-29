@@ -43,7 +43,7 @@ function createRock(x) {
     rock.style.top += 2
   }
 
-  window.requestAnimationFrame(moveRock)
+  rockDropInterval = setInterval(window.requestAnimationFrame(moveRock), 500)
 //  rockDropInterval = setInterval(moveRock, 500)
   return rock
 }
