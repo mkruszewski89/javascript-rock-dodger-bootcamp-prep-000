@@ -39,9 +39,9 @@ function createRock(x) {
       GAME.removeChild(rock)
       return
     }
-    rock.style.top = top + 2
+    rock.style.top += 2
   }
-  window.requestAnimationFrame(moveRock)
+  rockDropInterval = setInterval(window.requestAnimationFrame(moveRock), 500)
   ROCKS.push(rock)
   return rock
 }
