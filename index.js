@@ -30,6 +30,7 @@ function createRock(x) {
   rock.style.left = `${x}px`
   rock.style.top = top
   GAME.appendChild(rock)
+  ROCKS.push(rock)
 
   function moveRock() {
     if (checkCollision() === true) {
@@ -42,7 +43,6 @@ function createRock(x) {
     rock.style.top += 2
   }
 
-  ROCKS.push(rock)
   rockDropInterval = setInterval(window.requestAnimationFrame(moveRock), 500)
   return rock
 }
@@ -51,7 +51,7 @@ function endGame() {
   clearInterval(gameInterval)
   window.removeEventListener('keydown', moveDodger)
   while (ROCKS.length > 0) {
-    GAME.removeChild(ROCKS[ROCKS.length - 1][0])
+    GAME.removeChild(ROCKS[ROCKS.length - 1])
     ROCKS.pop()
   }
   alert("YOU LOSE!")
